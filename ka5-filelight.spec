@@ -1,18 +1,24 @@
-%define		kdeappsver	17.08.2
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		filelight
 Summary:	Filelight
 Name:		ka5-%{kaname}
-Version:	17.08.2
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	297295e9313df2afaeba6ec1fabb8128
+# Source0-md5:	87bff9a22dd0026d4a9a5fccc87c91e3
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 2.8.12
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	gettext-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-ki18n-devel >= 5.23.0
+BuildRequires:	kf5-kio-devel >= 5.23.0
+BuildRequires:	kf5-kxmlgui-devel >= 5.23.0
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -53,9 +59,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.kde.filelight.desktop
 %{_iconsdir}/hicolor/16x16/apps/filelight.png
 %{_iconsdir}/hicolor/22x22/apps/filelight.png
-%{_iconsdir}/hicolor/32x32/actions/views_filelight.png
+#%%{_iconsdir}/hicolor/32x32/actions/views_filelight.png
 %{_iconsdir}/hicolor/32x32/apps/filelight.png
 %{_iconsdir}/hicolor/48x48/apps/filelight.png
 %{_iconsdir}/hicolor/64x64/apps/filelight.png
+%{_iconsdir}/hicolor/128x128/apps/filelight.png
 %dir %{_datadir}/kxmlgui5/filelight
 %{_datadir}/kxmlgui5/filelight/filelightui.rc
+%{_datadir}/metainfo/org.kde.filelight.appdata.xml
