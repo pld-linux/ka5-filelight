@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		filelight
 Summary:	Filelight
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	5af0ceb983b40ebd929ea243fde2d589
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	3ea8f25f27a30b95e92136e4ba5735a3
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -57,7 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/filelight.categories
 /etc/xdg/filelightrc
 %attr(755,root,root) %{_bindir}/filelight
 %{_desktopdir}/org.kde.filelight.desktop
@@ -71,3 +70,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kxmlgui5/filelight
 %{_datadir}/kxmlgui5/filelight/filelightui.rc
 %{_datadir}/metainfo/org.kde.filelight.appdata.xml
+%{_datadir}/qlogging-categories5/filelight.categories
