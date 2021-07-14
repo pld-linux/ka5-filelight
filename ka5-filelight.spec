@@ -33,6 +33,11 @@ Filelight allows you to understand exactly where your diskspace is
 being used by graphically representating your filesystem as a set of
 concentric segmented-rings.
 
+%description -l pl.UTF-8
+Filelight pozwala Ci zrozumieć gdzie dokładnie przestrzeń
+dyskowa jest używana wyświetlając zestaw współśrodkowych wycinków koła
+reprezentujących Twój system plików.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
